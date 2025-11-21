@@ -1,0 +1,68 @@
+class Stack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self, data):
+        self.stack.append(data)
+        print(f"{data} pushed onto stack.")
+
+    def pop(self):
+        if self.is_empty():
+            print("Stack is empty! Cannot pop.")
+            return None
+        popped = self.stack.pop()
+        print(f"{popped} popped from stack.")
+        return popped
+
+    def peek(self):
+        if self.is_empty():
+            print("Stack is empty!")
+            return None
+        print(f"Top element is: {self.stack[-1]}")
+        return self.stack[-1]
+
+    def is_empty(self):
+
+    def display(self):
+        if self.is_empty():
+            print("Stack is empty!")
+        else:
+            print("Stack elements (top -> bottom):")
+            for element in reversed(self.stack):
+                print(element)
+
+def main():
+    stack = Stack()
+    while True:
+        print("\n--- Stack Operations Menu ---")
+        print("1. Push")
+        print("2. Pop")
+        print("3. Peek / Top")
+        print("4. Display Stack")
+        print("5. Check if Empty")
+        print("6. Exit")
+
+        choice = input("Enter your choice (1-6): ")
+
+        if choice == "1":
+            data = input("Enter element to push: ")
+            stack.push(data)
+        elif choice == "2":
+            stack.pop()
+        elif choice == "3":
+            stack.peek()
+        elif choice == "4":
+            stack.display()
+        elif choice == "5":
+            if stack.is_empty():
+                print("Stack is empty.")
+            else:
+                print("Stack is not empty.")
+        elif choice == "6":
+            print("Exiting program.")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+if __name__ == "__main__":
+    main()
