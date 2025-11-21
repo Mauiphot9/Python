@@ -1,0 +1,19 @@
+my_dict = {
+    "apple": "A sweet fruit",
+    "banana": "A yellow fruit",
+    "cat": "A small animal"
+}
+
+print(my_dict["apple"])  # Output: A sweet fruit
+
+my_dict["dog"] = "A loyal animal"
+
+my_dict["apple"] = "A crunchy fruit"
+
+del my_dict["banana"]
+
+for key, value in my_dict.items():
+    print(f"{key}: {value}")
+
+if "cat" in my_dict:
+    print("Cat is in the dictionary")
