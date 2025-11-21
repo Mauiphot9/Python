@@ -1,0 +1,31 @@
+students = [
+    ("Alice", 85, 92, 78),
+    ("Bob", 75, 88, 82),
+    ("Charlie", 90, 85, 87),
+    ("David", 60, 70, 65)
+]
+
+def display_students(student_list):
+    print("Student Grades:")
+    print("-" * 40)
+    for student in student_list:
+        name, math, science, english = student
+        print(f"Name: {name}, Math: {math}, Science: {science}, English: {english}")
+    print("-" * 40)
+
+def calculate_averages(student_list):
+    print("Student Averages:")
+    print("-" * 40)
+    for student in student_list:
+        name, math, science, english = student
+        average = (math + science + english) / 3
+        print(f"{name}: {average:.2f}")
+    print("-" * 40)
+
+def top_math_student(student_list):
+    top_student = max(student_list, key=lambda s: s[1]) 
+    print(f"Top Math Student: {top_student[0]} with {top_student[1]} marks")
+
+display_students(students)
+calculate_averages(students)
+top_math_student(students)
