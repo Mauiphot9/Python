@@ -1,0 +1,52 @@
+class Animal:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+    
+    def make_sound(self):
+        print(f"{self.name} makes a sound.")
+
+    def info(self):
+        print(f"Name: {self.name}, Species: {self.species}")
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name, "Dog")  
+        self.breed = breed
+
+    def make_sound(self):
+        print(f"{self.name} barks!")
+
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.__balance = balance 
+    
+    def deposit(self, amount):
+        self.__balance += amount
+        print(f"{amount} deposited. New balance: {self.__balance}")
+    
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+            print(f"{amount} withdrawn. New balance: {self.__balance}")
+        else:
+            print("Insufficient funds!")
+    
+    def get_balance(self):
+        return self.__balance
+
+
+cat = Animal("Whiskers", "Cat")
+cat.info()
+cat.make_sound()
+
+dog = Dog("Buddy", "Golden Retriever")
+dog.info()
+dog.make_sound()
+
+account = BankAccount("Alice", 1000)
+print(f"Initial Balance: {account.get_balance()}")
+account.deposit(500)
+account.withdraw(200)
+account.withdraw(2000) 
