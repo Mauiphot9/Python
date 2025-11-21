@@ -1,0 +1,21 @@
+import math
+
+print("=== String and Math Function Program ===")
+
+# Input string
+text = input("Enter a word or sentence: ")
+
+# Input number
+num = float(input("Enter a number: "))
+
+print("\n--- String Functions ---")
+print("Uppercase:", text.upper())
+print("Lowercase:", text.lower())
+print("String Length:", len(text))
+print("First Character:", text[0] if len(text) > 0 else "No characters")
+
+print("\n--- Math Functions ---")
+print("Square Root:", math.sqrt(num))
+print("Rounded Value:", round(num))
+print("Absolute Value:", abs(num))
+print("Power (num²):", math.pow(num, 2))
