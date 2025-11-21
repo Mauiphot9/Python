@@ -1,0 +1,62 @@
+import re
+
+def validate_email(email):
+    """
+    Validates an email address.
+    Pattern:
+      - Starts with letters, numbers, dots, underscores
+      - @ symbol
+      - Domain name with letters/numbers
+      - Dot followed by 2-4 letters
+    """
+    pattern = r"^[\w\.-]+@[\w\.-]+\.\w{2,4}$"
+    if re.match(pattern, email):
+        return True
+    else:
+        return False
+
+def validate_phone(phone):
+    """
+    Validates a phone number in the format: XXX-XXX-XXXX
+    """
+    pattern = r"^\d{3}-\d{3}-\d{4}$"
+    if re.match(pattern, phone):
+        return True
+    else:
+        return False
+
+def validate_password(password):
+    """
+    Validates a password:
+      - Minimum 8 characters
+      - At least one uppercase letter
+      - At least one lowercase letter
+      - At least one number
+      - At least one special character
+    """
+    pattern = r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+    if re.match(pattern, password):
+        return True
+    else:
+        return False
+
+# --- Main Program ---
+print("Welcome to the Validation Program!")
+
+email = input("Enter your email: ")
+if validate_email(email):
+    print("Valid Email ✅")
+else:
+    print("Invalid Email ❌")
+
+phone = input("Enter your phone number (XXX-XXX-XXXX): ")
+if validate_phone(phone):
+    print("Valid Phone ✅")
+else:
+    print("Invalid Phone ❌")
+
+password = input("Enter your password: ")
+if validate_password(password):
+    print("Strong Password ✅")
+else:
+    print("Weak Password ❌")
