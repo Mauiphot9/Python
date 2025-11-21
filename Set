@@ -1,0 +1,36 @@
+my_set = set()
+
+while True:
+    print("\nCurrent Set:", my_set)
+    print("1. Add element")
+    print("2. Remove element")
+    print("3. Union with another set")
+    print("4. Intersection with another set")
+    print("5. Difference with another set")
+    print("6. Exit")
+    
+    choice = input("Enter your choice: ")
+    
+    if choice == "1":
+        elem = input("Enter element to add: ")
+        my_set.add(elem)
+    elif choice == "2":
+        elem = input("Enter element to remove: ")
+        my_set.discard(elem)
+    elif choice == "3":
+        others = input("Enter elements of another set (comma separated): ").split(",")
+        my_set = my_set.union(set(others))
+        print("After union:", my_set)
+    elif choice == "4":
+        others = input("Enter elements of another set (comma separated): ").split(",")
+        my_set = my_set.intersection(set(others))
+        print("After intersection:", my_set)
+    elif choice == "5":
+        others = input("Enter elements of another set (comma separated): ").split(",")
+        my_set = my_set.difference(set(others))
+        print("After difference:", my_set)
+    elif choice == "6":
+        print("Exiting program.")
+        break
+    else:
+        print("Invalid choice. Try again.")
